@@ -1,0 +1,57 @@
+/* 使底部固定区域文具居中显示 */
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
+/* 设置字体图标样式 */
+.iconfont {
+    margin-right: 8px;
+}
+/* 将主体区域的滚动条隐藏 */
+.layui-layout-admin .layui-body {
+    overflow: hidden;
+}
+/* 设置引入网页内容填满主体区域 */
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.layui-side-scroll .user-info {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #282b33;
+    /* 设置文本内容不可选 */
+    user-select: none;
+}
+
+.text-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #009688;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.user-avatar {
+    /* 设置默认隐藏 */
+    display: none;
+}
+
+.layui-side-scroll .user-info .text-avatar {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.layui-side-scroll .user-info .user-avatar {
+    width: 40px;
+    height: 40px;
+}
