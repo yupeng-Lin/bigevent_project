@@ -1,0 +1,15 @@
+/* 重置密码的css样式表文件 */
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #f2f3f5;
+    padding: 15px;
+}
+
+.layui-form {
+    width: 500px;
+}

@@ -25,6 +25,21 @@ $(function() {
         })
         
     })
+
+    // 给头部的个人中心和侧边栏的个人中心通过事件冒泡绑定响应样式
+    $('.layui-header .layui-nav .layui-nav-child').on('click',function(e) {
+        // 获取到当前的点击元素的索引
+        const index = $(e.target).parent().index();
+        // 让对应的侧边栏元素添加layui-this类名
+        $('.layui-side .user_list dd').eq(index).addClass('layui-this').siblings().removeClass('layui-this');
+    })
+
+    $('.layui-side .user_list').on('click',function(e) {
+        // 获取到当前的点击元素的索引
+        const index = $(e.target).parent().index();
+        // 让对应的侧边栏元素添加layui-this类名
+        $('.layui-header .layui-nav .layui-nav-child dd').eq(index).addClass('layui-this').siblings().removeClass('layui-this');
+    })
         
 })
 
@@ -54,7 +69,7 @@ function getUserInfo() {
 function renderAvatarAndUsername(user) {
     // 1.渲染用户名
     // 1.1 判断用户是否有nickname，有就渲染，无就显示username
-    const name = user.nickname || user.username;
+    let name = user.nickname || user.username;
     $('#welcome-user').html(`${name}  欢迎您！`)
     // 2.渲染用户头像
     // 判断用户是否有自定义头像，有就显示，无就渲染文本头像
@@ -67,8 +82,8 @@ function renderAvatarAndUsername(user) {
         return
     }
     // 2.2 用户自定义属性为空，渲染文本头像
-    // 2.2.1 获取用户的用户名，提取第一个字符并大写显示
-    const first = user.username.slice(0,1).toUpperCase();
+    // 2.2.1 提取name属性的第一个字符作为文本头像并大写显示
+    let first = name.slice(0,1).toUpperCase();
     // 2.2.2 将大写的首字母渲染到文本头像内,并显示文本头像
     $('.text-avatar').html(first).show();
     // 2.2.3 隐藏用户自定义头像

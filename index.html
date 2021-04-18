@@ -39,9 +39,9 @@
               个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="">基本资料</a></dd>
-              <dd><a href="">更换头像</a></dd>
-              <dd><a href="">重置密码</a></dd>
+              <dd><a href="/user/user_info.html" target="fm">基本资料</a></dd>
+              <dd><a href="/user/user_avatar.html" target="fm">更换头像</a></dd>
+              <dd><a href="/user/user_pwd.html" target="fm">重置密码</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item tuichu"><a href="javascript:;" id="btnLogout"><span class="iconfont icon-tuichu"></span>退出</a></li>
@@ -73,10 +73,10 @@
             </li>
             <li class="layui-nav-item">
               <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
-              <dl class="layui-nav-child">
-                <dd><a href="javascript:;">基本资料</a></dd>
-                <dd><a href="javascript:;">更换头像</a></dd>
-                <dd><a href="javascript:;">重置密码</a></dd>
+              <dl class="layui-nav-child user_list">
+                <dd><a href="/user/user_info.html" target="fm">基本资料</a></dd>
+                <dd><a href="/user/user_avatar.html" target="fm">更换头像</a></dd>
+                <dd><a href="/user/user_pwd.html" target="fm">重置密码</a></dd>
               </dl>
             </li>
           </ul>
@@ -85,6 +85,7 @@
       
       <div class="layui-body">
         <!-- 内容主体区域 -->
+        <!-- iframe 标签，导入其他页面，使用时需要与 a 链接的 target 属性配合，src设置默认打开页面 -->
         <iframe name="fm" src="/home/dashboard.html" frameborder="0"></iframe>
       </div>
       
