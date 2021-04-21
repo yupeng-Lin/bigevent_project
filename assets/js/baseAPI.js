@@ -20,15 +20,15 @@ $.ajaxPrefilter(function(options) {
     // 访问的不是有权限的接口，无需配置请求头
 
     // jQuery的ajax请求有三种回调函数，
-        // success(成功执行), error(错误执行), complete(请求完成执行，不管成功与否)
-        // 在 complete 回调函数内判断用户的登陆状态，禁止用户未登录访问后台页面
-        options.complete = (res) => {
-            // complete 回调函数的返回参数中的 responseJSON 属性传递了信息对象
-            if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                // 1.1 清空token字符串
-                localStorage.removeItem('token');
-                // 1.2 强制跳转回login页面
-                location.href = '/login.html';
-            }
+    // success(成功执行), error(错误执行), complete(请求完成执行，不管成功与否)
+    // 在 complete 回调函数内判断用户的登陆状态，禁止用户未登录访问后台页面
+    options.complete = (res) => {
+        // complete 回调函数的返回参数中的 responseJSON 属性传递了信息对象
+        if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+            // 1.1 清空token字符串
+            localStorage.removeItem('token');
+            // 1.2 强制跳转回login页面
+            location.href = '/login.html';
         }
+    }
 })
